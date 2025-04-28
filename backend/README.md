@@ -1,10 +1,5 @@
 ## Run Locally
 
-Setup .env
-```bash
-  mv .env.template .env
-```
-
 Install dependencies
 ```bash
   uv sync
