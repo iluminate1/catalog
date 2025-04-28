@@ -8,3 +8,6 @@ makemigration app:
 
 migrate app="all":
   uv run piccolo migrations forwards {{app}} 
+
+createapp name register="Ture":
+  uv run piccolo app new {{name}} --root="./catalog/applications/" --register={{register}}
