@@ -1,4 +1,23 @@
 services:
+  backend:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./backend/
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./backend/catalog/
+          target: /app/catalog
+          ignore:
+            - ./backend/.venv/
+        - action: rebuild
+          path: ./backend/uv.lock
+
   db:
     image: postgres:17
     restart: always
