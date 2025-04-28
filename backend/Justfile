@@ -1,0 +1,10 @@
+default: start
+
+start:
+  uv run catalog/main.py
+
+makemigration app:
+  uv run piccolo migrations new {{app}} --auto
+
+migrate app="all":
+  uv run piccolo migrations forwards {{app}} 
