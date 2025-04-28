@@ -1,0 +1,9 @@
+.git
+.dokcerignore
+docker-compose.yml
+**/*.md
+**/*.pyc
+
+.venv/
+node_modules
+
