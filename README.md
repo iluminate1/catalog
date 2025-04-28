@@ -15,6 +15,7 @@ Backend -> [README](https://github.com/iluminate1/catalog/blob/main/backend/READ
 - litestar
 - piccolo orm
 - piccolo admin
+
 Frontend -> [README](https://github.com/iluminate1/catalog/blob/main/frontend/README.md): 
 - Vue3
 - PrimeVue
