@@ -1,11 +1,11 @@
-#!/usr/bin/env python
-
 import uvicorn
+
+from catalog.config import settings
 
 if __name__ == "__main__":
     uvicorn.run(
         app="application:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True,
+        host=settings.app.host,
+        port=settings.app.port,
+        reload=settings.app.debug,
     )
