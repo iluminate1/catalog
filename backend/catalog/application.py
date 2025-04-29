@@ -10,13 +10,13 @@ from catalog.config.cors import cors_config
 from catalog.config.csrf import csrf_config
 
 if TYPE_CHECKING:
-    from litestar.types import Receive, Scope, Send
+    from starlette.types import Receive, Scope, Send
 
 
 # mounting Piccolo Admin
-@asgi("/admin/", is_mount=True)
+@asgi("/admin/", is_mount=True, copy_scope=True)
 async def admin(scope: "Scope", receive: "Receive", send: "Send") -> None:
-    _ = create_admin(tables=[BaseUser, SessionsBase])
+    await create_admin(tables=[BaseUser, SessionsBase])(scope, receive, send)
 
 
 async def open_database_connection_pool():
