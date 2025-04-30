@@ -6,6 +6,7 @@ from piccolo.engine import engine_finder
 from piccolo_admin.endpoints import create_admin
 from piccolo_api.session_auth.tables import SessionsBase
 
+from catalog.applications.auth.controller import AuthController
 from catalog.config.cors import cors_config
 from catalog.config.csrf import csrf_config
 
@@ -44,6 +45,7 @@ async def close_database_connection_pool():
 app = Litestar(
     route_handlers=[
         admin,
+        AuthController,
     ],
     cors_config=cors_config,
     csrf_config=csrf_config,

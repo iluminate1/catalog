@@ -4,11 +4,24 @@ version = "0.1.0"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "litestar>=2.15.2",
-    "orjson>=3.10.16",
-    "piccolo-admin>=1.9.1",
-    "piccolo[postgres]>=1.25.0",
-    "pydantic>=2.11.3",
-    "pydantic-settings>=2.9.1",
-    "uvicorn[standard]>=0.34.2",
+  "litestar>=2.15.2",
+  "orjson>=3.10.16",
+  "piccolo-admin>=1.9.1",
+  "piccolo[postgres]>=1.25.0",
+  "pydantic>=2.11.3",
+  "pydantic-settings>=2.9.1",
+  "uvicorn[standard]>=0.34.2",
 ]
+
+
+[tool.basedpyright]
+disableOrganizeImports = true
+
+typeCheckingMode = "standard"
+strictListInference = true
+strictSetInference = true
+strictDictionaryInference = true
+
+reportUnusedVariable = "none"
+reportUnusedImport = "none"
+reportIgnoreCommentWithoutRule = "information"
